@@ -15,9 +15,10 @@ const app = express();
 // app.use(cors("*"));
 app.use(cors({
   origin: 'https://storyapp-three.vercel.app',
-  methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
-  allowedHeaders: ['Content-Type', 'Authorization'],
+  methods: ['GET', 'POST', 'PUT', 'DELETE'],
+  credentials: true // Include credentials if needed
 }));
+
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 
