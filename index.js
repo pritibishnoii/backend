@@ -13,11 +13,17 @@ const userRoutes = require("./routes/user");
 const app = express();
 
 // app.use(cors("*"));
-app.use(cors({
-  origin: 'https://storyapp-three.vercel.app',
-  methods: ['GET', 'POST', 'PUT', 'DELETE'],
-  credentials: true // Include credentials if needed
-}));
+// app.use(cors({
+//   origin: 'https://storyapp-three.vercel.app/',
+//   methods: ['GET', 'POST', 'PUT', 'DELETE'],
+//   credentials: true // Include credentials if needed
+// }));
+app.use(
+	cors({
+		origin: "*",
+		credentials: true,
+	})
+);
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
